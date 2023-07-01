@@ -12,8 +12,9 @@ func PrintNumbers(n int) {
 }
 
 func BlockFunction() {
-	time.Sleep(time.Second * 5)
 	fmt.Println("do something else.")
+	time.Sleep(time.Second * 5)
+	fmt.Println("end something else.")
 }
 
 func main() {
