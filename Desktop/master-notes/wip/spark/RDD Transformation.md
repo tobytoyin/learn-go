@@ -1,0 +1,31 @@
+---
+id: FACD4E42-4B18-4C96-A8AF-78C1E53A0B93
+creation-date: 2023-01-06T11:05:40
+type: concept
+aliases: 
+tags:
+  - technology/spark/pyspark
+  - technology/spark
+  - example
+catalogs:
+  - 2023-01-05-20-58
+---
+
+RDD [[0_pages/03/2023-02-26-15-40-01-93300#Transformations|Transformations]] are essentially computation done on a single RDD instance within a single Partition. These transformations are mostly equivalent to *Single Record Computation* done within MapReduce [[0_pages/02/2023-02-26-15-39-18-14900|Mapping Stage]] & [[0_pages/02/2023-02-26-15-39-18-14900|Shuffling Stage]]. For example: 
+- Mapper Stage Functions - `filter`, `map`
+- Mapper Sort Stage - `sort`
+- Shuffling Stage Functions - `randomSplit` 
+
+![[3_hidden/_images/Pasted image 20230107133122.png]]
+
+
+> [!NOTE]- Why `sort` can be done here?
+> While a sorting function cannot be done on a single Record along, RDD allows `sort` to be a RDD transformation. This is because Spark retains the entire partition (RDD) in-memory, this allows sorting of data within a executor's partition.
+
+---
+
+
+
+---
+## ℹ️  Resources
+- [[Apache Spark The Definitive Guide#^chapter-12]]
